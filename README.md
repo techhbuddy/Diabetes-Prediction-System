@@ -14,7 +14,7 @@ A web-based machine learning application for predicting diabetes using patient m
 ```
 diabetes-prediction-system/
 ├── diabetes.csv
-├── train_model.py
+├── Diabetes_Prediction.ipynb
 ├── model.pkl
 ├── scaler.pkl
 ├── app.py
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ### 4. Train the Model (If model.pkl and scaler.pkl don't exist)
 
 ```bash
-python train_model.py
+python Diabetes_Prediction.ipynb
 ```
 This will create `model.pkl` and `scaler.pkl` in your directory.
 
@@ -76,7 +76,7 @@ Visit [http://localhost:5000](http://localhost:5000) in your browser.
 ## File Descriptions
 
 - **diabetes.csv**: The dataset used for training the model.
-- **train_model.py**: Script to train the machine learning model and save it.
+- **Diabetes_Prediction.ipynb**: Script to train the machine learning model and save it.
 - **model.pkl, scaler.pkl**: The trained model and scaler, used for predictions.
 - **app.py**: Flask application to serve the web interface and prediction API.
 - **templates/index.html**: The HTML front-end for user input.
