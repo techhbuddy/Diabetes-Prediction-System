@@ -105,4 +105,16 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ---
 
+## 🔎 Key Challenges in Diabetes-Prediction-System & How I Solved Them
+
+### 1. Data Preprocessing & Scaling  
+The raw dataset contained different scales and ranges for features like glucose level, blood pressure, BMI, age, etc. To ensure the model could learn meaningfully, I applied careful preprocessing: I used a standard scaler to normalize numeric features so that no feature dominated because of its scale. This helped make the predictions more reliable and stable.
+
+### 2. Choosing & Training a Robust ML Model  
+Because simple models can underfit and complex models can overfit, selecting the right classifier was non-trivial. I experimented with a logistic regression (and optionally other classifiers) and evaluated performance to settle on a balance between bias and variance. I saved the trained model and the scaler into `model.pkl` and `scaler.pkl` respectively — ensuring that the same preprocessing is applied in production as during training.
+
+### 3. Bridging ML Model to Web App (Deployment)  
+Transitioning from a notebook-based model to a deployable web application was challenging. I created a small web interface using Flask, wrote `app.py` to load the model and scaler, accept user input via a form, preprocess it exactly like training data, run prediction, and return results. Ensuring the web app accepted user input correctly and matched the model’s expectations required synchronizing preprocessing and input validation.
+
+
 *For questions or suggestions, please open an issue or contact the maintainer.*
